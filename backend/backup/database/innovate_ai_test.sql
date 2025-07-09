@@ -1,0 +1,441 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 09, 2025 at 12:10 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `innovate_ai_test`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+CREATE TABLE `books` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `published_year` int(11) DEFAULT NULL,
+  `genre` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`id`, `title`, `author`, `published_year`, `genre`, `created_at`, `updated_at`) VALUES
+(1, 'Southern Gothic Pride and Prejudice', 'Jane Austen', 1813, 'Romance', '2025-07-09 09:56:54', '2025-07-09 09:56:54'),
+(3, 'The Shadow of the Serpent', 'Elara Vance', 2003, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(4, 'City of Whispers', 'Rhys Blackwood', 1998, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(5, 'The Last Echo', 'Isla Grey', 2021, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(6, 'A Vow of Silence', 'Finn Ashworth', 2011, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(7, 'Crimson River', 'Maya Stone', 2005, 'Romance', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(8, 'The Forgotten Kingdom', 'Alex Thorne', 1989, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(9, 'House of Eternal Night', 'Kael Monroe', 2019, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(10, 'The Starless Sea', 'Sofia Reed', 2022, 'Young Adult', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(11, 'Game of Crowns', 'Liam North', 2015, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(12, 'The Gilded Cage', 'Olivia Paige', 2017, 'Dystopian', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(13, 'Whispers in the Dark', 'Ben Coldwell', 2008, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(14, 'The Sunken City', 'Yara Farrow', 1995, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(15, 'A Dance with Dragons', 'Henry Shaw', 2012, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(16, 'The Silent Patient', 'Clara Dane', 2018, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(17, 'Echoes of Tomorrow', 'David Croft', 2023, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(18, 'The Serpent\'s Kiss', 'Grace Hart', 2001, 'Romance', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(19, 'Legacy of the Lost', 'Jack Knight', 2007, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(20, 'The Twisted Path', 'Noah Locke', 2014, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(21, 'A Song of Steel', 'Theo West', 2010, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(22, 'The Final Gambit', 'Quinn Vance', 2020, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(23, 'Shadows of the Past', 'Una Rivers', 1992, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(24, 'The Broken Star', 'Violet Evergreen', 2024, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(25, 'The Last Stand', 'Will Blackwood', 2000, 'Action', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(26, 'Beneath a Scarlet Sky', 'Xyla Stone', 2009, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(27, 'The Glass Throne', 'Zane Ashworth', 2016, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(28, 'Secrets of the Deep', 'Elara Coldwell', 2002, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(29, 'The Iron Heart', 'Rhys Dane', 1999, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(30, 'A Whisper of War', 'Isla Croft', 2013, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(31, 'The Crimson Petal', 'Finn Farrow', 2006, 'Romance', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(32, 'City of Bone', 'Maya Grey', 2025, 'Urban Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(33, 'The Lost Heir', 'Alex Hart', 1987, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(34, 'The Silent Woods', 'Kael Knight', 2019, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(35, 'Starlight and Shadows', 'Sofia Locke', 2021, 'Young Adult', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(36, 'The Dragon\'s Legacy', 'Liam Monroe', 2014, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(37, 'The Perfect Marriage', 'Olivia North', 2020, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(38, 'Whispers of the Damned', 'Ben Paige', 2010, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(39, 'The Sunstone', 'Yara Reed', 1996, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(40, 'A Dance of Thieves', 'Henry Shaw', 2018, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(41, 'The Patient Assassin', 'Clara Vance', 2016, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(42, 'Echoes of Time', 'David West', 2022, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(43, 'The Serpent\'s Tooth', 'Grace Blackwood', 2004, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(44, 'Legacy of Light', 'Jack Stone', 2008, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(45, 'The Tangled Web', 'Noah Ashworth', 2015, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(46, 'A Song of Ice', 'Theo Coldwell', 2011, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(47, 'The Final Witness', 'Quinn Dane', 2023, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(48, 'Shadows of Tomorrow', 'Una Croft', 1994, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(49, 'The Burning Sky', 'Violet Farrow', 2024, 'Dystopian', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(50, 'The Last Voyage', 'Will Grey', 2001, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(51, 'Beyond the Horizon', 'Xyla Hart', 2007, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(52, 'The Golden Empire', 'Zane Knight', 2017, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(53, 'Secrets in the Sand', 'Elara Locke', 2003, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(54, 'The Steel Queen', 'Rhys Monroe', 2000, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(55, 'A Whisper of Hope', 'Isla North', 2012, 'Contemporary', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(56, 'The Crimson Crown', 'Finn Paige', 2007, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(57, 'City of Ghosts', 'Maya Reed', 2023, 'Supernatural', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(58, 'The Lost City of Z', 'Alex Shaw', 2009, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(59, 'The Silent Sister', 'Kael Vance', 2020, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(60, 'Starlight Brigade', 'Sofia West', 2022, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(61, 'The Dragon\'s Egg', 'Liam Blackwood', 2015, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(62, 'The Guest List', 'Olivia Stone', 2019, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(63, 'Whispers from the Grave', 'Ben Ashworth', 2011, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(64, 'The Sea of Monsters', 'Yara Coldwell', 1998, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(65, 'A Dance with Fate', 'Henry Dane', 2017, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(66, 'The Hidden Girl', 'Clara Croft', 2018, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(67, 'Echoes of the Void', 'David Farrow', 2024, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(68, 'The Serpent\'s Shadow', 'Grace Grey', 2005, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(69, 'Legacy of Ashes', 'Jack Hart', 2009, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(70, 'The Crooked House', 'Noah Knight', 2016, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(71, 'A Song of Ruin', 'Theo Locke', 2012, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(72, 'The Final Cut', 'Quinn Monroe', 2022, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(73, 'Shadows in the Mist', 'Una North', 1995, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(74, 'The Shattered Crown', 'Violet Paige', 2025, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(75, 'The Last Guardian', 'Will Reed', 2002, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(76, 'Before the Fall', 'Xyla Shaw', 2008, 'Dystopian', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(77, 'The Silver Serpent', 'Zane Vance', 2018, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(78, 'Secrets of the Spire', 'Elara West', 2004, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(79, 'The Iron King', 'Rhys Blackwood', 2001, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(80, 'A Whisper in the Reeds', 'Isla Stone', 2013, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(81, 'The Crimson Tide', 'Finn Ashworth', 2008, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(82, 'City of Light', 'Maya Coldwell', 2024, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(83, 'The Lost Symbol', 'Alex Dane', 2009, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(84, 'The Silent Scream', 'Kael Croft', 2021, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(85, 'Starlight\'s End', 'Sofia Farrow', 2023, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(86, 'The Dragon\'s Hoard', 'Liam Grey', 2016, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(87, 'The Family Upstairs', 'Olivia Hart', 2019, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(88, 'Whispers of Treason', 'Ben Knight', 2012, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(89, 'The Island of the Lost', 'Yara Locke', 2000, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(90, 'A Dance of Light and Shadow', 'Henry Monroe', 2019, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(91, 'The Good Daughter', 'Clara North', 2017, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(92, 'Echoes of Power', 'David Paige', 2025, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(93, 'The Serpent\'s Coil', 'Grace Reed', 2006, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(94, 'Legacy of Blood', 'Jack Shaw', 2010, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(95, 'The Girl on the Train', 'Noah Vance', 2015, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(96, 'A Song of Silence', 'Theo West', 2013, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(97, 'The Final Deception', 'Quinn Blackwood', 2024, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(98, 'Shadows of the Empire', 'Una Stone', 1997, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(99, 'The Gilded Wolves', 'Violet Ashworth', 2019, 'Young Adult', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(100, 'The Last Kingdom', 'Will Coldwell', 2004, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(101, 'Children of Time', 'Xyla Dane', 2018, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(102, 'The Brass City', 'Zane Croft', 2017, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(103, 'The Emerald Sea', 'Elara Farrow', 2005, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(104, 'The Stone Circle', 'Rhys Grey', 2002, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(105, 'A Whisper of Magic', 'Isla Hart', 2014, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(106, 'The Crimson Labyrinth', 'Finn Knight', 2009, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(107, 'City of Nightmares', 'Maya Locke', 2025, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(108, 'The Lost Prince', 'Alex Monroe', 1990, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(109, 'The Silent War', 'Kael North', 2022, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(110, 'Starlight\'s Requiem', 'Sofia Paige', 2024, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(111, 'The Dragon\'s Curse', 'Liam Reed', 2017, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(112, 'The Woman in Cabin 10', 'Olivia Shaw', 2016, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(113, 'Whispers Under the Moon', 'Ben Vance', 2013, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(114, 'The Edge of the World', 'Yara West', 2001, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(115, 'A Dance of Swords', 'Henry Blackwood', 2020, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(116, 'The Night Fire', 'Clara Stone', 2019, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(117, 'Echoes in the Ice', 'David Ashworth', 2023, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(118, 'The Serpent\'s Game', 'Grace Coldwell', 2007, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(119, 'Legacy of the Damned', 'Jack Dane', 2011, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(120, 'The Hunting Party', 'Noah Croft', 2018, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(121, 'A Song for the Lost', 'Theo Farrow', 2014, 'Contemporary', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(122, 'The Final Prayer', 'Quinn Grey', 2025, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(123, 'Shadows on the Water', 'Una Hart', 1998, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(124, 'The Crystal Cave', 'Violet Knight', 2022, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(125, 'The Last Explorer', 'Will Locke', 2003, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(126, 'The Ninth House', 'Xyla Monroe', 2019, 'Urban Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(127, 'The Alchemist', 'Zane North', 1988, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(128, 'The Amber Spyglass', 'Elara Paige', 2000, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(129, 'The Wolf\'s Hour', 'Rhys Reed', 1989, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(130, 'A Whisper on the Wind', 'Isla Shaw', 2015, 'Romance', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(131, 'The Crimson Script', 'Finn Vance', 2010, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(132, 'City of the Dead', 'Maya West', 2021, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(133, 'The Lost Continent', 'Alex Blackwood', 1993, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(134, 'The Silent Land', 'Kael Stone', 2023, 'Dystopian', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(135, 'Starlight\'s Fall', 'Sofia Ashworth', 2025, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(136, 'The Dragon\'s Awakening', 'Liam Coldwell', 2018, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(137, 'The Turn of the Key', 'Olivia Dane', 2019, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(138, 'Whispers in the Mist', 'Ben Croft', 2014, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(139, 'The Sunless Depths', 'Yara Farrow', 2004, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(140, 'A Dance with Demons', 'Henry Grey', 2021, 'Urban Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(141, 'The Lost Apothecary', 'Clara Hart', 2021, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(142, 'Echoes of the Damned', 'David Knight', 2024, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(143, 'The Serpent\'s Blade', 'Grace Locke', 2008, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(144, 'Legacy of Dust', 'Jack Monroe', 2012, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(145, 'The Chalk Man', 'Noah North', 2018, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(146, 'A Song of Storms', 'Theo Paige', 2015, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(147, 'The Final Girl', 'Quinn Reed', 2021, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(148, 'Shadows of Deception', 'Una Shaw', 2000, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(149, 'The Priory of the Orange Tree', 'Violet Vance', 2019, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(150, 'The Last Days of Jack Sparks', 'Will West', 2016, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(151, 'Circe', 'Xyla Blackwood', 2018, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(152, 'The Name of the Wind', 'Zane Stone', 2007, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(153, 'The Pearl Thief', 'Elara Ashworth', 2017, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(154, 'The River of Souls', 'Rhys Coldwell', 2006, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(155, 'A Whisper of Winter', 'Isla Dane', 2016, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(156, 'The Crimson Queen', 'Finn Croft', 2011, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(157, 'City of Falling Stars', 'Maya Farrow', 2020, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(158, 'The Lost World', 'Alex Grey', 1895, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(159, 'The Silent Companions', 'Kael Hart', 2017, 'Gothic', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(160, 'Starlight\'s Echo', 'Sofia Knight', 2023, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(161, 'The Dragon\'s Price', 'Liam Locke', 2019, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(162, 'The Maidens', 'Olivia Monroe', 2021, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(163, 'Whispers of the Old Gods', 'Ben North', 2015, 'Cosmic Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(164, 'The Golden Compass', 'Yara Paige', 1995, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(165, 'A Dance of Blades', 'Henry Reed', 2022, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(166, 'The Shadow of the Wind', 'Clara Shaw', 2001, 'Literary Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(167, 'Echoes of Eternity', 'David Vance', 2025, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(168, 'The Serpent\'s Eye', 'Grace West', 2009, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(169, 'Legacy of Kings', 'Jack Blackwood', 2013, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(170, 'The Guest', 'Noah Stone', 2022, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(171, 'A Song of Whispers', 'Theo Ashworth', 2016, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(172, 'The Final Problem', 'Quinn Coldwell', 1893, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(173, 'Shadows in the Deep', 'Una Dane', 1999, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(174, 'The Starless Crown', 'Violet Croft', 2022, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(175, 'The Last Wish', 'Will Farrow', 1993, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(176, 'Project Hail Mary', 'Xyla Grey', 2021, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(177, 'The Martian', 'Zane Hart', 2011, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(178, 'The Bone Season', 'Elara Knight', 2013, 'Dystopian', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(179, 'The Night Circus', 'Rhys Locke', 2011, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(180, 'A Whisper in Time', 'Isla Monroe', 2017, 'Romance', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(181, 'The Crimson King', 'Finn North', 2012, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(182, 'City of Endless Night', 'Maya Paige', 2022, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(183, 'The Lost Man', 'Alex Reed', 2018, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(184, 'The Silent Wife', 'Kael Shaw', 2020, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(185, 'Starlight\'s Promise', 'Sofia Vance', 2024, 'Romance', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(186, 'The Dragon\'s Path', 'Liam West', 2020, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(187, 'The Paris Apartment', 'Olivia Blackwood', 2022, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(188, 'Whispers of the Forest', 'Ben Stone', 2016, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(189, 'The Buried Giant', 'Yara Ashworth', 2015, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(190, 'A Dance with Shadows', 'Henry Coldwell', 2023, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(191, 'The Vanishing Half', 'Clara Dane', 2020, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(192, 'Echoes of the Fall', 'David Croft', 2025, 'Post-Apocalyptic', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(193, 'The Serpent\'s Rise', 'Grace Farrow', 2010, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(194, 'Legacy of the Scholar', 'Jack Grey', 2014, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(195, 'The Windsor Knot', 'Noah Hart', 2020, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(196, 'A Song for a New Day', 'Theo Knight', 2019, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(197, 'The Final Legacy', 'Quinn Locke', 2023, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(198, 'Shadows of Yesterday', 'Una Monroe', 2001, 'Romance', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(199, 'The Bone Shard Daughter', 'Violet North', 2020, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(200, 'The Last Anniversary', 'Will Paige', 2006, 'Contemporary', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(201, 'The Seven Husbands of Evelyn Hugo', 'Xyla Reed', 2017, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(202, 'The Midnight Library', 'Zane Shaw', 2020, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(203, 'The Cartographers', 'Elara Vance', 2022, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(204, 'The Iron Trial', 'Rhys West', 2014, 'Young Adult', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(205, 'A Whisper of Ruin', 'Isla Blackwood', 2018, 'Dark Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(206, 'The Crimson Chamber', 'Finn Stone', 2013, 'Gothic', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(207, 'City of Mirrors', 'Maya Ashworth', 2016, 'Literary Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(208, 'The Lost Daughter', 'Alex Coldwell', 2018, 'Psychological Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(209, 'The Silent House', 'Kael Dane', 2024, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(210, 'Starlight\'s Descent', 'Sofia Croft', 2025, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(211, 'The Dragon\'s Fire', 'Liam Farrow', 2021, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(212, 'The Last Thing He Told Me', 'Olivia Grey', 2021, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(213, 'Whispers of the Forgotten', 'Ben Hart', 2017, 'Supernatural', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(214, 'The Sea of Tranquility', 'Yara Knight', 2022, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(215, 'A Dance with the Devil', 'Henry Locke', 2024, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(216, 'The Rose Code', 'Clara Monroe', 2021, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(217, 'Echoes from the Ashes', 'David North', 2023, 'Dystopian', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(218, 'The Serpent\'s Song', 'Grace Paige', 2011, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(219, 'Legacy of the Fallen', 'Jack Reed', 2015, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(220, 'The Sanatorium', 'Noah Shaw', 2021, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(221, 'A Song of Hope', 'Theo Vance', 2017, 'Contemporary', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(222, 'The Final Chapter', 'Quinn West', 2024, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(223, 'Shadows of the Citadel', 'Una Blackwood', 2002, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(224, 'The Invisible Life of Addie LaRue', 'Violet Stone', 2020, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(225, 'The Last Flight', 'Will Ashworth', 2020, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(226, 'Klara and the Sun', 'Xyla Coldwell', 2021, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(227, 'The Song of Achilles', 'Zane Dane', 2011, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(228, 'The Night Ship', 'Elara Croft', 2022, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(229, 'The Golem and the Jinni', 'Rhys Farrow', 2013, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(230, 'A Whisper in the Walls', 'Isla Grey', 2019, 'Gothic', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(231, 'The Crimson Thread', 'Finn Hart', 2014, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(232, 'City of Jade', 'Maya Knight', 2017, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(233, 'The Lost Future of Pepperharrow', 'Alex Locke', 2020, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(234, 'The Silent Prophet', 'Kael Monroe', 2025, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(235, 'Starlight\'s Embrace', 'Sofia North', 2023, 'Romance', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(236, 'The Dragon\'s Gambit', 'Liam Paige', 2022, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(237, 'The Rock Paper Scissors', 'Olivia Reed', 2021, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(238, 'Whispers of the Tide', 'Ben Shaw', 2018, 'Contemporary', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(239, 'The Kingdoms', 'Yara Vance', 2021, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(240, 'A Dance with Destiny', 'Henry West', 2024, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(241, 'The Lincoln Highway', 'Clara Blackwood', 2021, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(242, 'Echoes of Destiny', 'David Stone', 2022, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(243, 'The Serpent\'s Crown', 'Grace Ashworth', 2012, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(244, 'Legacy of the Stars', 'Jack Coldwell', 2016, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(245, 'The Push', 'Noah Dane', 2021, 'Psychological Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(246, 'A Song of Dreams', 'Theo Croft', 2018, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(247, 'The Final Twist', 'Quinn Farrow', 2023, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(248, 'Shadows of the Mind', 'Una Grey', 2005, 'Psychological Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(249, 'The Betrayals', 'Violet Hart', 2020, 'Literary Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(250, 'The Last House on Needless Street', 'Will Knight', 2021, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(251, 'Piranesi', 'Xyla Locke', 2020, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(252, 'The Vanishing Stair', 'Zane Monroe', 2019, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(253, 'The Clockmaker\'s Daughter', 'Elara North', 2018, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(254, 'The Binding', 'Rhys Paige', 2018, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(255, 'A Whisper of Smoke', 'Isla Reed', 2020, 'Urban Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(256, 'The Crimson Orchard', 'Finn Shaw', 2015, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(257, 'City of Starlight', 'Maya Vance', 2023, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(258, 'The Lost Book of the White', 'Alex West', 2020, 'Young Adult', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(259, 'The Silent Daughter', 'Kael Blackwood', 2021, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(260, 'Starlight\'s Ghost', 'Sofia Stone', 2024, 'Supernatural', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(261, 'The Dragon Prince', 'Liam Ashworth', 2019, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(262, 'The Golden Couple', 'Olivia Coldwell', 2022, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(263, 'Whispers of the North', 'Ben Dane', 2019, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(264, 'The Midnight Bargain', 'Yara Croft', 2020, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(265, 'A Dance of Fire and Ice', 'Henry Farrow', 2025, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(266, 'The Four Winds', 'Clara Grey', 2021, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(267, 'Echoes of the Deep', 'David Hart', 2024, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(268, 'The Serpent and the Wings of Night', 'Grace Knight', 2022, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(269, 'Legacy of the Phoenix', 'Jack Locke', 2017, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(270, 'The Good Lie', 'Noah Monroe', 2021, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(271, 'A Song of Shadows', 'Theo North', 2019, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(272, 'The Final Tour', 'Quinn Paige', 2025, 'Contemporary', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(273, 'Shadows of Power', 'Una Reed', 2006, 'Political Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(274, 'The House in the Cerulean Sea', 'Violet Shaw', 2020, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(275, 'The Last Policeman', 'Will Vance', 2012, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(276, 'This Is How You Lose the Time War', 'Xyla West', 2019, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(277, 'Jonathan Strange & Mr Norrell', 'Zane Blackwood', 2004, 'Historical Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(278, 'The Starless Crown', '', 2022, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(279, 'The Final Empire', 'Brandon Sanderson', 2006, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(280, 'Dune', 'Frank Herbert', 1965, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(281, 'Neuromancer', 'William Gibson', 1984, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(282, 'Hyperion', 'Dan Simmons', 1989, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(283, 'The Left Hand of Darkness', 'Ursula K. Le Guin', 1969, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(284, 'Brave New World', 'Aldous Huxley', 1932, 'Dystopian', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(285, 'Fahrenheit 451', 'Ray Bradbury', 1953, 'Dystopian', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(286, 'The Handmaid\'s Tale', 'Margaret Atwood', 1985, 'Dystopian', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(287, 'Pride and Prejudice', 'Jane Austen', 1813, 'Romance', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(288, 'Jane Eyre', 'Charlotte Brontë', 1847, 'Gothic', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(289, 'Wuthering Heights', 'Emily Brontë', 1847, 'Gothic', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(290, 'To Kill a Mockingbird', 'Harper Lee', 1960, 'Literary Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(291, '1984', 'George Orwell', 1949, 'Dystopian', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(292, 'The Great Gatsby', 'F. Scott Fitzgerald', 1925, 'Literary Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(293, 'Moby Dick', 'Herman Melville', 1851, 'Adventure', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(294, 'The Lord of the Rings', 'J.R.R. Tolkien', 1954, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(295, 'A Game of Thrones', 'George R.R. Martin', 1996, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(296, 'The Hobbit', 'J.R.R. Tolkien', 1937, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(297, 'Harry Potter and the Sorcerer\'s Stone', 'J.K. Rowling', 1997, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(298, 'The Chronicles of Narnia', 'C.S. Lewis', 1950, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(299, 'The Stand', 'Stephen King', 1978, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(300, 'It', 'Stephen King', 1986, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(301, 'The Shining', 'Stephen King', 1977, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(302, 'Dracula', 'Bram Stoker', 1897, 'Horror', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(303, 'Frankenstein', 'Mary Shelley', 1818, 'Gothic', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(304, 'The Picture of Dorian Gray', 'Oscar Wilde', 1890, 'Gothic', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(305, 'The Catcher in the Rye', 'J.D. Salinger', 1951, 'Literary Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(306, 'Lord of the Flies', 'William Golding', 1954, 'Dystopian', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(307, 'Animal Farm', 'George Orwell', 1945, 'Political Satire', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(308, 'The Road', 'Cormac McCarthy', 2006, 'Post-Apocalyptic', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(309, 'Blood Meridian', 'Cormac McCarthy', 1985, 'Western', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(310, 'Lonesome Dove', 'Larry McMurtry', 1985, 'Western', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(311, 'The Hitchhiker\'s Guide to the Galaxy', 'Douglas Adams', 1979, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(312, 'Ender\'s Game', 'Orson Scott Card', 1985, 'Science Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(313, 'The Color Purple', 'Alice Walker', 1982, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(314, 'Beloved', 'Toni Morrison', 1987, 'Historical Fiction', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(315, 'One Hundred Years of Solitude', 'Gabriel García Márquez', 1967, 'Magical Realism', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(316, 'Love in the Time of Cholera', 'Gabriel García Márquez', 1985, 'Romance', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(317, 'The Silent Corner', 'Dean Koontz', 1982, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(318, 'The Outsider', 'Stephen King', 2018, 'Mystery', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(319, 'The Institute', 'Stephen King', 2019, 'Thriller', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(320, 'Fairy Tale', 'Stephen King', 2022, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(321, 'The Way of Kings', 'Brandon Sanderson', 2010, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(322, 'Words of Radiance', 'Brandon Sanderson', 2014, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(323, 'Oathbringer', 'Brandon Sanderson', 2017, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(324, 'Rhythm of War', 'Brandon Sanderson', 2020, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(325, 'Mistborn: The Final Empire', 'Brandon Sanderson', 2006, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(326, 'The Well of Ascension', 'Brandon Sanderson', 2007, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(327, 'The Hero of Ages', 'Brandon Sanderson', 2008, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(328, 'Warbreaker', 'Brandon Sanderson', 2009, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(329, 'Elantris', 'Brandon Sanderson', 2005, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(330, 'American Gods', 'Neil Gaiman', 2001, 'Urban Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(331, 'Good Omens', 'Neil Gaiman & Terry Pratchett', 1990, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(332, 'Stardust', 'Neil Gaiman', 1999, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(333, 'Neverwhere', 'Neil Gaiman', 1996, 'Urban Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(334, 'The Ocean at the End of the Lane', 'Neil Gaiman', 2013, 'Fantasy', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(335, 'The Subtle Art of Not Giving a F*ck', 'Mark Manson', 2016, 'Self-Help', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(336, 'Atomic Habits', 'James Clear', 2018, 'Self-Help', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(337, 'Sapiens: A Brief History of Humankind', 'Yuval Noah Harari', 2011, 'History', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(338, 'Educated', 'Tara Westover', 2018, 'Biography', '2025-07-09 10:06:51', '2025-07-09 10:06:51'),
+(339, 'The Immortal Life of Henrietta Lacks', 'Rebecca Skloot', 2010, 'Science', '2025-07-09 10:06:51', '2025-07-09 10:06:51');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(32) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `created_at`, `updated_at`) VALUES
+(1, 'newuser', '6feb4c700de1982f91ee7a1b40ca4ded05d155af3987597cb179f430dd60da0b', 'newuser@example.com', '2025-07-08 10:31:20', '2025-07-08 10:31:20');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `books`
+--
+ALTER TABLE `books`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `books`
+--
+ALTER TABLE `books`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=340;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
