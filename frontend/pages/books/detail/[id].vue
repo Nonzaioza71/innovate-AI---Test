@@ -50,6 +50,11 @@
 import Swal from 'sweetalert2'
 import { ref } from 'vue'
 
+definePageMeta({
+  middleware: 'auth'
+});
+
+
 const route = useRoute()
 const router = useRouter()
 const book = ref({})

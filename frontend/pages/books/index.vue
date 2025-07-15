@@ -130,6 +130,11 @@
 import { ref, computed, onMounted, watch } from 'vue'
 import * as XLSX from 'xlsx'
 
+definePageMeta({
+  middleware: 'auth'
+});
+
+
 const books = ref([])
 const categories = ref([])
 const searchQuery = ref('')
