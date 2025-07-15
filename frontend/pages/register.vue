@@ -62,7 +62,7 @@ async function register() {
     }
 
     try {
-        const response = await $fetch('/api/register-user', {
+        const response = await $fetch('http://localhost:3302/api/register-user', {
             method: 'POST',
             body: {
                 username: username.value,
