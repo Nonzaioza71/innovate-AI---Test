@@ -30,8 +30,7 @@
             </form>
 
             <div class="text-center text-xs text-gray-500 dark:text-gray-400 pt-4">
-                Forgot your password? <a href="#" class="text-blue-400 hover:underline">Reset it here</a>
-                {{ show_alert }}
+                Don't have an account? <NuxtLink to="/register" class="text-blue-400 hover:underline">Register here</NuxtLink>
             </div>
         </div>
     </div>
